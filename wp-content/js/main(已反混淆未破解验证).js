@@ -6,7 +6,9 @@ url: url,
 type: 'GET',
 complete: function (_0xb1a5x4) {
   if (_0xb1a5x4['status'] == 200) {
+      console['log']('成功连接到验证服务器！');
   } else {
+      alert('抱歉，无法连接至验证服务器。请检查网站运行设备是否连接网络。');
   }
 }
 });
@@ -16,10 +18,14 @@ $['getJSON'](url, {
   id: 1
 }, function (_0xb1a5x5) {
   if ('done' in _0xb1a5x5) {
+      console['log']('域名 ' + host2 + ' 正版验证成功。');
   } else {
       if (xy == 'file:') {
+          console['log']('本地模式开启');
       } else {
           {
+              window['location']['href'] = 'http://www.iecraft.com';
+              alert('抱歉！您当前域名未通过IEcraft系统授权，无法绑定域名使用，请支持正版，购买后再使用，谢谢。');
           }
       }
   }
